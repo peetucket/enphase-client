@@ -103,6 +103,14 @@ puts Time.parse('2022-01-15T10:20:00-08:00').to_i
 => 1642270800
 ```
 
+To convert back:
+
+```
+epoch_time = 1642270800 # note: needs to be an integer, not a string
+Time.at(epoch_time)
+=> 2022-01-15 10:20:00 -0800
+```
+
 1. Stats: https://developer.enphase.com/docs#stats
 
 ```
@@ -122,7 +130,7 @@ result = client.summary(system_id: SYSTEM_ID)
 3. Inverters summary: https://developer.enphase.com/docs#inverters_summary_by_envoy_or_site
 
 ```
-result = client.inverters(system_id: SYSTEM_ID)
+result = client.inverters(site_id: SITE_ID)
 ```
 
 4. Systems: https://developer.enphase.com/docs#index
